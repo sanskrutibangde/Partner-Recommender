@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="author" content="colorlib.com">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Registration</title>
+
+    <!-- Font Icon -->
+    <link rel="stylesheet" href="fonts/material-icon/css/material-design-iconic-font.min.css">
+    <link rel="stylesheet" href="vendor/nouislider/nouislider.min.css">
+
+    <!-- Main css -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <div class="main">
+
+        <div class="container">
+            <form method="POST" id="signup-form" class="signup-form" action="studdb.php" enctype="multipart/form-data">
+                <div>
+                	<h2>Student Registration</h2>
+                    <h3>Personal info</h3>
+                    <fieldset>
+                        <h2>Personal information</h2>
+                        <p class="desc">Please enter your information and proceed to next step</p>
+                        <div class="fieldset-content">
+                            <div class="form-row">
+                                <label class="form-label">Name</label>
+                                <div class="form-flex">
+                                    <div class="form-group">
+                                        <input type="text" name="first_name" id="first_name" />
+                                        <span class="text-input">First</span>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" name="last_name" id="last_name" />
+                                        <span class="text-input">Last</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="email" class="form-label">Email</label>
+                                <input type="email" name="email" id="email" />
+                                <span class="text-input">Example  :<span>  Jeff@gmail.com</span></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone" class="form-label">Phone</label>
+                                <input type="text" name="phone" id="phone" />
+                            </div>
+                            <div class="form-date">
+                                <label for="birth_date" class="form-label">Birth Date</label>
+                                <div class="form-date-group">
+                                    <div class="form-date-item">
+                                        <select id="birth_month" name="birth_month"></select>
+                                        <span class="text-input">MM</span>
+                                    </div>
+                                    <div class="form-date-item">
+                                        <select id="birth_date" name="birth_date"></select>
+                                        <span class="text-input">DD</span>
+                                    </div>
+                                    <div class="form-date-item">
+                                        <select id="birth_year" name="birth_year"></select>
+                                        <span class="text-input">YYYY</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-date">
+                                <label for="gender" class="form-label">Gender</label>
+                                <div class="form-date-group">
+                                    <div class="form-date-item">
+                                        <select id="gender" name="gender">
+                                        	<option value="male">	Male</option>
+                                        	<option value="female">	Female</option>
+                                        	<option value="other">	Other</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>            
+                           
+                        </div>
+                    </fieldset>
+
+                    <h3>College Details</h3>
+                    <fieldset>
+                        <h2>College information</h2>
+                        <p class="desc">Please enter your information and proceed to next step</p>
+                        <div class="fieldset-content">
+                        	<div class="form-row">
+                                <label class="form-label">College Name & Branch</label>
+                                <div class="form-flex">
+                                    <div class="form-group">
+                                        <input type="text" name="college" id="college" />
+                                        <span class="text-input">Example  :<span>  College of Engineering Pune</span></span>
+                                    </div>
+                                    <!-- <label class="form-label">College Name</label> -->
+                                    <div class="form-group">
+                                        <input type="text" name="branch" id="branch" />
+                                <span class="text-input">Example  :<span>  Civil, Mechanical</span></span>
+                                    </div>
+                                </div>
+                            </div>                            
+                                                                                
+                                                            
+                            
+                            <div class="form-group">
+                                <label for="year" class="form-label">Year</label>
+                                <input type="text" name="year" id="year" />
+                                <span class="text-input">Example  :<span>  First, Second, Third, Fourth</span></span>
+                            </div>
+                            <div class="form-date">
+                                <label for="Budegt" class="form-label">Budget</label>
+                                <div class="form-date-group">
+                                    <div class="form-date-item">
+                                        <select id="budget" name="budget">
+                                        	<option value="500-600">	500-600</option>
+                                        	<option value="700-1000">	700-1000</option>
+                                        	<option value="1100-1200">	1100-1200</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>  
+                             <div class="form-group">
+                                <label for="months" class="form-label">For how many months do you want room?</label>
+                                <input type="number" name="months" id="months" />
+                                
+                            </div> 
+                            <div class="form-group">
+                                <label for="partner" class="form-label">Do you want a partner?</label>
+                                <input type="text" name="partner" id="partner" placeholder="yes or no" />
+                                
+                            </div>         
+                           
+                        </div>
+                    </fieldset>
+
+                    <h3>Verification</h3>
+                    <fieldset>
+                        <h2>PhotoId Verification</h2>
+                        <p class="desc">Details about photoId</p> 
+                        <input type="file" name="img" id="img" required />
+                        <br>
+                        
+                        <div class="form-row">
+                                <label class="form-label">Password</label>
+                                <div class="form-flex">
+                                    <div class="form-group">
+                                        <input type="password" name="pass" id="pass" onkeyup="check();" />
+                                        <span class="text-input">Enter password</span>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="password" name="pass1" id="pass1" onkeyup="check();" />
+                                        <span class="text-input">Re-enter password</span>
+                                    </div>
+                                </div>
+                                <br>
+                                <span class="desc" id="message"></span>
+                        </div>
+                        <input type="submit" name="submit" value="Submit"/>
+                        <span class="form-icon"><i class="zmdi zmdi-search"></i></span>
+                    </fieldset>
+                   
+                </div>
+            </form>
+        </div>
+
+    </div>
+    <script type="text/javascript">
+        var check = function(){
+        if (document.getElementById('pass').value ==
+            document.getElementById('pass1').value) {
+            document.getElementById('message').style.color = 'green';
+            document.getElementById('message').innerHTML = 'matching';
+        }else{
+            document.getElementById('message').style.color = 'red';
+            document.getElementById('message').innerHTML = 'not matching';
+        }
+    }
+    </script>
+    <!-- JS -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="vendor/jquery-validation/dist/additional-methods.min.js"></script>
+    <script src="vendor/jquery-steps/jquery.steps.min.js"></script>
+    <script src="vendor/minimalist-picker/dobpicker.js"></script>
+    <script src="vendor/nouislider/nouislider.min.js"></script>
+    <script src="vendor/wnumb/wNumb.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
